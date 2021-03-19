@@ -2,9 +2,6 @@ h1 Edit new product
 
 div
   = link_to products_path do
-    =button_tag 'Back', class: 'btn btn-primary'
+    = button_tag 'Back', class: 'btn btn-primary'
 br
-= form_with model: @product do |f|
-  div = f.text_field :title, placeholder: 'Title'
-  div = f.text_area :description, placeholder: 'Write content here'
-  div = f.submit 'Submit product'
+  = render 'form', product: @product
