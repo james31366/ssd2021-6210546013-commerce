@@ -1,5 +1,5 @@
 = form_with model: @product do |f|
   div = f.text_field :title, placeholder: 'Title'
   div = f.text_area :description, placeholder: 'Write content here'
-  div = f.text_area :stock, placeholder: 'Insert Stock number'
+  div = f.number_field :stock, placeholder: 'Insert Stock number'
   div = f.submit 'Submit Product'
