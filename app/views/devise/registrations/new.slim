@@ -1,7 +1,6 @@
 body#bodyAuth
   div.container__auth
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
       form#createAccount.form method="POST"
         #accountInfo.form
           h1.form__title Create Account
@@ -9,6 +8,7 @@ body#bodyAuth
           .form__input-group
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input", placeholder: "Email Address"
             .form__input-error-message
+              = render "devise/shared/error_messages", resource: resource
           .form__input-group
             input#firstname.form__input autofocus="" placeholder="Firstname" type="text" /
             .form__input-error-message

@@ -1,5 +1,7 @@
-= form_with model: @product do |f|
+= form_with model: @category do |f|
   div = f.text_field :title, placeholder: 'Title'
   div = f.text_area :description, placeholder: 'Write content here'
-  div = f.number_field :stock, placeholder: 'Insert Stock number'
+  div = f.number_field :stock, placeholder: 'Insert Stock number', min: 0
+  div = f.number_field :price, placeholder: 'Price', min: 0
+  div = f.collection_check_boxes :category_ids, Category.all, :id, :name
   div = f.submit 'Submit Product'
