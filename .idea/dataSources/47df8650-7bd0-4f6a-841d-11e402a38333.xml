@@ -1413,17 +1413,22 @@ true posixrules
     <database id="2" parent="1" name="commerce_development">
       <ObjectId>16386</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2807</IntrospectionStateNumber>
-      <Relations>sequence|table|16530|16532|1
-sequence|table|24612|24614|1
-sequence|table|33137|33139|1
-sequence|table|40996|40998|1
+      <IntrospectionStateNumber>2847</IntrospectionStateNumber>
+      <Relations>sequence|table|41006|41008|1
+sequence|table|41021|41023|1
+sequence|table|41032|41034|1
+sequence|table|41042|41044|1
 </Relations>
     </database>
     <database id="3" parent="1" name="commerce_test">
       <ObjectId>16387</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2799</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2849</IntrospectionStateNumber>
+      <Relations>sequence|table|41069|41071|1
+sequence|table|41084|41086|1
+sequence|table|41095|41097|1
+sequence|table|41105|41107|1
+</Relations>
     </database>
     <database id="4" parent="1" name="demo_development">
       <ObjectId>32806</ObjectId>
@@ -1437,7 +1442,7 @@ sequence|table|40996|40998|1
       <ObjectId>13395</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2800</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2850</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="7" parent="1" name="pg_execute_server_program">
@@ -1508,7 +1513,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2808</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2848</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="21" parent="2" name="plpgsql">
@@ -1757,7 +1762,7 @@ UC/10
 </Acl>
       <StateNumber>287</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>2801</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2851</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="51" parent="6" name="plpgsql">
@@ -1858,64 +1863,64 @@ UC/10
       <Type>index</Type>
     </access-method>
     <sequence id="63" parent="20" name="admins_id_seq">
-      <ObjectId>24612</ObjectId>
+      <ObjectId>41006</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="64" parent="20" name="categories_id_seq">
-      <ObjectId>33137</ObjectId>
+      <ObjectId>41021</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="65" parent="20" name="product_categories_id_seq">
-      <ObjectId>40996</ObjectId>
+      <ObjectId>41032</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <sequence id="66" parent="20" name="products_id_seq">
-      <ObjectId>16530</ObjectId>
+      <ObjectId>41042</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <DataType>bigint|0s</DataType>
     </sequence>
     <table id="67" parent="20" name="admins">
-      <ObjectId>24614</ObjectId>
+      <ObjectId>41008</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
     </table>
     <table id="68" parent="20" name="ar_internal_metadata">
-      <ObjectId>16396</ObjectId>
+      <ObjectId>41061</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>506</StateNumber>
+      <StateNumber>2830</StateNumber>
     </table>
     <table id="69" parent="20" name="categories">
-      <ObjectId>33139</ObjectId>
+      <ObjectId>41023</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
     </table>
     <table id="70" parent="20" name="product_categories">
-      <ObjectId>40998</ObjectId>
+      <ObjectId>41034</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
     </table>
     <table id="71" parent="20" name="products">
-      <ObjectId>16532</ObjectId>
+      <ObjectId>41044</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>2806</StateNumber>
+      <StateNumber>2826</StateNumber>
     </table>
     <table id="72" parent="20" name="schema_migrations">
-      <ObjectId>16388</ObjectId>
+      <ObjectId>41053</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>505</StateNumber>
+      <StateNumber>2827</StateNumber>
     </table>
     <column id="73" parent="67" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <DefaultExpression>nextval(&apos;admins_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
@@ -1923,7 +1928,7 @@ UC/10
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
@@ -1931,45 +1936,45 @@ UC/10
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
       <TypeId>1043</TypeId>
     </column>
     <column id="76" parent="67" name="reset_password_token">
       <Position>4</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="77" parent="67" name="reset_password_sent_at">
       <Position>5</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="78" parent="67" name="remember_created_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="79" parent="67" name="created_at">
       <Position>7</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="80" parent="67" name="updated_at">
       <Position>8</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1564</StateNumber>
+      <StateNumber>2819</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="81" parent="67" name="admins_pkey">
-      <ObjectId>24623</ObjectId>
-      <StateNumber>1564</StateNumber>
+      <ObjectId>41017</ObjectId>
+      <StateNumber>2819</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -1978,8 +1983,8 @@ UC/10
       <ClassIds>3124</ClassIds>
     </index>
     <index id="82" parent="67" name="index_admins_on_email">
-      <ObjectId>24625</ObjectId>
-      <StateNumber>1564</StateNumber>
+      <ObjectId>41019</ObjectId>
+      <StateNumber>2820</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
@@ -1988,8 +1993,8 @@ UC/10
       <ClassIds>3126</ClassIds>
     </index>
     <index id="83" parent="67" name="index_admins_on_reset_password_token">
-      <ObjectId>24626</ObjectId>
-      <StateNumber>1564</StateNumber>
+      <ObjectId>41020</ObjectId>
+      <StateNumber>2821</StateNumber>
       <ColNames>reset_password_token</ColNames>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
@@ -1998,8 +2003,8 @@ UC/10
       <ClassIds>3126</ClassIds>
     </index>
     <key id="84" parent="67" name="admins_pkey">
-      <ObjectId>24624</ObjectId>
-      <StateNumber>1564</StateNumber>
+      <ObjectId>41018</ObjectId>
+      <StateNumber>2819</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>admins_pkey</UnderlyingIndexName>
@@ -2008,32 +2013,32 @@ UC/10
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>506</StateNumber>
+      <StateNumber>2830</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="86" parent="68" name="value">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>506</StateNumber>
+      <StateNumber>2830</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="87" parent="68" name="created_at">
       <Position>3</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>506</StateNumber>
+      <StateNumber>2830</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="88" parent="68" name="updated_at">
       <Position>4</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>506</StateNumber>
+      <StateNumber>2830</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="89" parent="68" name="ar_internal_metadata_pkey">
-      <ObjectId>16402</ObjectId>
-      <StateNumber>506</StateNumber>
+      <ObjectId>41067</ObjectId>
+      <StateNumber>2830</StateNumber>
       <ColNames>key</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -2043,8 +2048,8 @@ UC/10
       <ClassIds>3126</ClassIds>
     </index>
     <key id="90" parent="68" name="ar_internal_metadata_pkey">
-      <ObjectId>16403</ObjectId>
-      <StateNumber>506</StateNumber>
+      <ObjectId>41068</ObjectId>
+      <StateNumber>2830</StateNumber>
       <ColNames>key</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>ar_internal_metadata_pkey</UnderlyingIndexName>
@@ -2053,39 +2058,39 @@ UC/10
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <DefaultExpression>nextval(&apos;categories_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
     <column id="92" parent="69" name="name">
       <Position>2</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="93" parent="69" name="description">
       <Position>3</Position>
       <DataType>varchar|0s</DataType>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="94" parent="69" name="created_at">
       <Position>4</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="95" parent="69" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2791</StateNumber>
+      <StateNumber>2822</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="96" parent="69" name="categories_pkey">
-      <ObjectId>33146</ObjectId>
-      <StateNumber>2791</StateNumber>
+      <ObjectId>41030</ObjectId>
+      <StateNumber>2822</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -2094,8 +2099,8 @@ UC/10
       <ClassIds>3124</ClassIds>
     </index>
     <key id="97" parent="69" name="categories_pkey">
-      <ObjectId>33147</ObjectId>
-      <StateNumber>2791</StateNumber>
+      <ObjectId>41031</ObjectId>
+      <StateNumber>2822</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>categories_pkey</UnderlyingIndexName>
@@ -2104,39 +2109,39 @@ UC/10
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <DefaultExpression>nextval(&apos;product_categories_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
     <column id="99" parent="70" name="product_id">
       <Position>2</Position>
       <DataType>bigint|0s</DataType>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="100" parent="70" name="category_id">
       <Position>3</Position>
       <DataType>bigint|0s</DataType>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <TypeId>20</TypeId>
     </column>
     <column id="101" parent="70" name="created_at">
       <Position>4</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="102" parent="70" name="updated_at">
       <Position>5</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2805</StateNumber>
+      <StateNumber>2823</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <index id="103" parent="70" name="product_categories_pkey">
-      <ObjectId>41002</ObjectId>
-      <StateNumber>2805</StateNumber>
+      <ObjectId>41038</ObjectId>
+      <StateNumber>2823</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -2145,24 +2150,24 @@ UC/10
       <ClassIds>3124</ClassIds>
     </index>
     <index id="104" parent="70" name="index_product_categories_on_product_id">
-      <ObjectId>41004</ObjectId>
-      <StateNumber>2805</StateNumber>
+      <ObjectId>41041</ObjectId>
+      <StateNumber>2825</StateNumber>
       <ColNames>product_id</ColNames>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
     <index id="105" parent="70" name="index_product_categories_on_category_id">
-      <ObjectId>41005</ObjectId>
-      <StateNumber>2805</StateNumber>
+      <ObjectId>41040</ObjectId>
+      <StateNumber>2824</StateNumber>
       <ColNames>category_id</ColNames>
       <AccessMethodId>403</AccessMethodId>
       <CollationIds>0</CollationIds>
       <ClassIds>3124</ClassIds>
     </index>
     <key id="106" parent="70" name="product_categories_pkey">
-      <ObjectId>41003</ObjectId>
-      <StateNumber>2805</StateNumber>
+      <ObjectId>41039</ObjectId>
+      <StateNumber>2823</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>product_categories_pkey</UnderlyingIndexName>
@@ -2171,51 +2176,51 @@ UC/10
       <Position>1</Position>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <DefaultExpression>nextval(&apos;products_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>20</TypeId>
     </column>
     <column id="108" parent="71" name="title">
       <Position>2</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="109" parent="71" name="description">
       <Position>3</Position>
       <DataType>text|0s</DataType>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="110" parent="71" name="stock">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="111" parent="71" name="created_at">
       <Position>5</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="112" parent="71" name="updated_at">
       <Position>6</Position>
       <DataType>timestamp(6)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1558</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>1114</TypeId>
     </column>
     <column id="113" parent="71" name="price">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>2806</StateNumber>
+      <StateNumber>2826</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="114" parent="71" name="products_pkey">
-      <ObjectId>16539</ObjectId>
-      <StateNumber>1558</StateNumber>
+      <ObjectId>41051</ObjectId>
+      <StateNumber>2826</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -2224,8 +2229,8 @@ UC/10
       <ClassIds>3124</ClassIds>
     </index>
     <key id="115" parent="71" name="products_pkey">
-      <ObjectId>16540</ObjectId>
-      <StateNumber>1558</StateNumber>
+      <ObjectId>41052</ObjectId>
+      <StateNumber>2826</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>products_pkey</UnderlyingIndexName>
@@ -2234,12 +2239,12 @@ UC/10
       <Position>1</Position>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>505</StateNumber>
+      <StateNumber>2827</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="117" parent="72" name="schema_migrations_pkey">
-      <ObjectId>16394</ObjectId>
-      <StateNumber>505</StateNumber>
+      <ObjectId>41059</ObjectId>
+      <StateNumber>2827</StateNumber>
       <ColNames>version</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
@@ -2249,8 +2254,8 @@ UC/10
       <ClassIds>3126</ClassIds>
     </index>
     <key id="118" parent="72" name="schema_migrations_pkey">
-      <ObjectId>16395</ObjectId>
-      <StateNumber>505</StateNumber>
+      <ObjectId>41060</ObjectId>
+      <StateNumber>2827</StateNumber>
       <ColNames>version</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>schema_migrations_pkey</UnderlyingIndexName>
