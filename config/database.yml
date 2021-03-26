@@ -87,6 +87,6 @@ test:
 production:
   <<: *default
   database: commerce_production
-  username: <%= ENV ['COMMERCE_DATABASE_USERNAME'] || 'postgres' %>>
+  username: 'postgres'
   password: <%= ENV['COMMERCE_DATABASE_PASSWORD'] %>
   host: <%= ENV['COMMERCE_DATABASE_HOST'] || 'localhost' %>
