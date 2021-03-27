@@ -5,40 +5,32 @@ body#bodyAuth
         #accountInfo.form
           h1.form__title Create Account
           .form__message.form__message--error
+            = render "devise/shared/error_messages", resource: resource
           .form__input-group
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input", placeholder: "Email Address"
-            .form__input-error-message
-              = render "devise/shared/error_messages", resource: resource
-          .form__input-group
-            input#firstname.form__input autofocus="" placeholder="Firstname" type="text" /
+            = f.email_field :username, autofocus: true, autocomplete: "username", class: "form__input", placeholder: "Username", id: 'username'
             .form__input-error-message
           .form__input-group
-            input#surname.form__input autofocus="" placeholder="Surname" type="text" /
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input", placeholder: "Email Address", id: 'email'
             .form__input-error-message
           .form__input-group
-            input#password1.form__input autofocus="" placeholder="Password" type="password" /
+            = f.text_field :firstname, autofocus: true, autocomplete: "given-name", class: "form__input", placeholder: "Firstname", id: 'firstname'
             .form__input-error-message
           .form__input-group
-            input#password2.form__input autofocus="" placeholder=("Confirm Password") type="password" /
-            .form__input-error-message
-          button#nextToMoreInfo.form__button type="submit"  Next
-          p.form__text
-            a#linkLogin.form__link href="login.html"  Already have an account? Sign in
-        #moreInfo.form.form--hidden
-          h1.form__title More Info
-          .form__message.form__message--error
-          .form__input-group
-            input.form__input autofocus="" id=("blood type") placeholder=("Blood type") type="text" /
+            = f.text_field :lastname, autofocus: true, autocomplete: "family-name", class: "form__input", placeholder: "Lastname", id: 'lastname'
             .form__input-error-message
           .form__input-group
-            input#jobs.form__input autofocus="" placeholder="Jobs" type="text" /
-            .form__input-error-message
+            = f.number_field :age, autofocus: true, class: 'form__input', placeholder: 'Age', id: 'age'
           .form__input-group
-            input#cyberWareSN.form__input autofocus="" placeholder=("Cyber Ware Serial Number") type="text" /
+            = f.password_field :password, autocomplete: "new-password", class: "form__input", placeholder: 'Password', id: 'password1'
+            .form__input-error-message
+          / - if @minimum_password_length
+          /   em(= @minimum_password_length / characters minimum)
+          / - end
+          / br
+          .form__input-group
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: "form__input", placeholder: 'Confirm Password', id: 'password2'
             .form__input-error-message
           button.form__button type="submit"  Create Account
           p.form__text
-            a#linkLogin.form__link href="login.html"  Already have an account? Sign in
-          p.form__text
-            a#backToSignup.form__link Back
-=javascript_pack_tag 'signup.js'
+            = render "devise/shared/links"
+  = javascript_pack_tag 'signup.js'

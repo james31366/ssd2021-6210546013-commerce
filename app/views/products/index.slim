@@ -2,11 +2,6 @@
   .col-6
     h1 This is products list
   .col-6
-    - if current_admin
-      div = current_admin.email
-      div = link_to 'Logout', destroy_admin_session_path, method: :delete
-    - else
-      div = link_to 'Login', new_admin_session_path
 
 .row
   .col
