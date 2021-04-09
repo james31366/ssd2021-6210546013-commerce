@@ -1,7 +1,15 @@
-h1 = @category.title
+h1 = @product.title
 hr
-div = @category.description
-div = link_to 'Back', products_path
+div
+  - if @product.cover_image.attached?
+    = image_tag @product.cover_image, width: '1000px'
+div = @product.description
+div
+  - @product.images.each do |image|
+    = image_tag image, width: '400px'
+div
+  = link_to products_path do
+    = button_tag 'Back', class: 'btn btn-outline-primary'
 hr
 / hr
 /   h2 Comments Section

@@ -1,7 +1,18 @@
-= form_with model: @category do |f|
+= form_with model: @product do |f|
+  label Cover Image
+  div = f.file_field :cover_image
+  label Title
   div = f.text_field :title, placeholder: 'Title'
+  label Description
   div = f.text_area :description, placeholder: 'Write content here'
+  label Stock
   div = f.number_field :stock, placeholder: 'Insert Stock number', min: 0
+  label Price
   div = f.number_field :price, placeholder: 'Price', min: 0
+  label Category
   div = f.collection_check_boxes :category_ids, Category.all, :id, :name
-  div = f.submit 'Submit Product'
+  label Status
+  div = f.select :status, Product.statuses.keys
+  label Images
+  div = f.file_field :images, multiple: true
+  div = f.submit 'Submit Product', class: 'btn btn-outline-primary'

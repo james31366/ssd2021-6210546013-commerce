@@ -1,60 +1,67 @@
-# frozen_string_literal: true
-
 class ProductsController < ApplicationController
   before_action :authenticate_admin!, except: %i[index show]
 
   def index
-    @categories = Product.all
-    if @search.present?
-      @categories = @categories.where('title LIKE ? or body LIKE ?', "%#{@search}", "%#{@search}").page(@search).per(5)
+    @products = Product.all
+    @products = @products.search(@search) if @search.present?
+
+    @products = @products.page(params[:page]).order(updated_at: :desc).per(10)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data generate_csv(Product.all), file_name: 'products.csv' }
     end
-    @categories = @categories.page(params[:page]).per(5)
   end
 
   def new
-    @category = Product.new
+    @product = Product.new
   end
 
   def show
-    @category = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def create
-    @category = Product.create(product_params)
+    @product = Product.create(product_params)
 
-    flash[:error] = @category.errors.full_messages if @category.invalid?
+    flash[:error] = @product.errors.full_messages if @product.invalid?
 
     redirect_to action: :index
   end
 
   def edit
-    @category = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   def update
-    @category = Product.find(params[:id])
-    @category.update(product_params)
+    @product = Product.find(params[:id])
+    @product.update(product_params)
     redirect_to action: :index
   end
 
   def destroy
-    @category = Product.find(params[:id])
-    @category.destroy
+    @product = Product.find(params[:id])
+    @product.destroy
     redirect_to action: :index
   end
 
   def csv_upload
-    data = params(:csv_file).read.split("\n")
+    data = params[:csv_file].read.split("\n")
     data.each do |line|
       attr = line.split(',').map(&:strip)
-      Product.create title: attr[0], description: attr[1], stock: attr[2]
+      Product.create title: attr[0], description: attr[1], stock: attr[2], price: attr[3]
     end
     redirect_to action: :index
   end
 
   private
 
+  def generate_csv(articles)
+    articles.map { |a| [a.title, a.description, a.stock, a.price, a.created_at.to_date].join(',') }.join("\n")
+  end
+
   def product_params
-    params.require(:category).permit(:title, :description, :stock)
+    params.require(:product).permit(:title, :description, :cover_image, :stock, :price, :status, images: [],
+                                                                                                 category_ids: [])
   end
 end
