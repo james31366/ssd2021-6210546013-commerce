@@ -2,6 +2,10 @@
   .col-6
     h1 This is products list
   .col-6
+    .float-right
+      div = current_admin.email
+      span = "#{current_admin.firstname} #{current_admin.lastname}"
+      span.ml-3 = link_to 'Logout', destroy_admin_session_path, method: :delete
 
 .row
   .col
