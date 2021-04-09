@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProductsController < ApplicationController
   before_action :authenticate_admin!, except: %i[index show]
 
@@ -38,6 +40,15 @@ class ProductsController < ApplicationController
   def destroy
     @category = Product.find(params[:id])
     @category.destroy
+    redirect_to action: :index
+  end
+
+  def csv_upload
+    data = params(:csv_file).read.split("\n")
+    data.each do |line|
+      attr = line.split(',').map(&:strip)
+      Product.create title: attr[0], description: attr[1], stock: attr[2]
+    end
     redirect_to action: :index
   end
 

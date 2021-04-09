@@ -1,3 +1,5 @@
+
+
 body#bodyAuth
   div.container__auth
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
@@ -7,12 +9,6 @@ body#bodyAuth
           .form__message.form__message--error
             = render "devise/shared/error_messages", resource: resource
           .form__input-group
-            = f.email_field :username, autofocus: true, autocomplete: "username", class: "form__input", placeholder: "Username", id: 'username'
-            .form__input-error-message
-          .form__input-group
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input", placeholder: "Email Address", id: 'email'
-            .form__input-error-message
-          .form__input-group
             = f.text_field :firstname, autofocus: true, autocomplete: "given-name", class: "form__input", placeholder: "Firstname", id: 'firstname'
             .form__input-error-message
           .form__input-group
@@ -20,6 +16,9 @@ body#bodyAuth
             .form__input-error-message
           .form__input-group
             = f.number_field :age, autofocus: true, class: 'form__input', placeholder: 'Age', id: 'age'
+          .form__input-group
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input", placeholder: "Email Address", id: 'email'
+            .form__input-error-message
           .form__input-group
             = f.password_field :password, autocomplete: "new-password", class: "form__input", placeholder: 'Password', id: 'password1'
             .form__input-error-message

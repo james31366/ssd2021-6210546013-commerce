@@ -53,3 +53,12 @@
       .float-right
         = link_to new_product_path do
           = button_tag 'Add new Product', class: 'btn btn-primary'
+
+div
+  hr
+
+.row
+  .col
+    = form_tag products_csv_upload_path, multipart: true do
+      div = file_field_tag :csv_file
+      div = submit_tag :upload, class: 'btn btn-outline-primary'

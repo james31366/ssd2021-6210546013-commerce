@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -18,8 +16,10 @@ gem 'slim-rails'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-
-gem 'bootstrap', '~> 4.6.0'
+# bootstrap for gem
+gem 'bootstrap', '~> 5.0.0.beta2'
+# use with bootstrap
+gem 'sprockets-rails', '>=2.3.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -28,8 +28,6 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-
-gem 'bootstrap', '~> 4.6.0'
 
 gem 'jquery-rails', '~> 4.4.0'
 # Use Redis adapter to run Action Cable in production

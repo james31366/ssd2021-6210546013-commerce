@@ -9,25 +9,8 @@ html lang="en"
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+
   body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-      = link_to('Commerce', products_path, class: 'navbar-brand')
-      button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item
-            = link_to('Product ', products_path, class: 'nav-link')
-          li.nav-item
-            = link_to('Categories ', categories_path, class: 'nav-link')
-        form.form-inline.my-2.my-lg-0
-          - if current_admin
-            div = current_admin.email
-            div = link_to 'Logout', destroy_admin_session_path, method: :delete
-          - else
-            div = link_to 'Login', new_admin_session_path
-          input.form-control.mr-sm-2 aria-label="Search" placeholder="Search" type="search" /
-          button.btn.btn-outline-success.my-2.my-sm-0 type="submit"  Search
     .container
       h1 style=("color: red")
         = flash[:error]&.join(', ')
