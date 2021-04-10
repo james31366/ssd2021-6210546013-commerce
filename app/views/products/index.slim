@@ -30,30 +30,24 @@
                 = image_tag p.cover_image, alt: 'product image'
             .product-btns
               button.btn-cart type="button"
-                | add to cart
+                label.btn-text
+                  | add to cart
                 span
                   i.fas.fa-plus
               button.btn-buy type="button"
-                | buy now
+                label.btn-text
+                  | buy now
                 span
                   i.fas.fa-shopping-cart
           .product-info
             .product-info-top
               h2.sm-title lifestyle
-              .rating
-                span
-                  i.fas.fa-star
-                span
-                  i.fas.fa-star
-                span
-                  i.fas.fa-star
-                span
-                  i.fas.fa-star
-                span
-                  i.far.fa-star
+            / Describe item section
             = link_to p.title, product_path(p), class: 'product-name'
             p.product-price
-            p.product-price = p.price
+            p.product-price
+              = p.price
+              | ฿
           / .off-info
           /   h2.sm-title 25% off
 
