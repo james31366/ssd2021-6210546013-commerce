@@ -21,46 +21,35 @@
   .col-12
     = link_to categories_path do
       = button_tag 'Category', class: 'btn btn-primary'
-    table.table.table-hover
-      thead.thead-dark
-        tr
-          th Cover
-          th Status
-          th Title
-          th Description
-          th Number of stocks
-          th Categories
-          th Images
-          th Created at
-          th Updated at
-          th Action
-      tbody
-        - @products.each do |a|
-          tr
-            td
-              - if a.cover_image.attached?
-                = image_tag a.cover_image, width: '64px'
-            td = a.status
-            td.font-weight-bold = a.title.first(16)
-            td = a.description
-            td = a.stock
-            td = a.categories&.map(&:name)&.join(',').presence || 'NA'
-            td
-              - a.images.each do |image|
-                = image_tag image, width: '32px'
-            td.font-weight-light = "#{time_ago_in_words(a.created_at.to_date)} Ago"
-            td.font-weight-light = "#{time_ago_in_words(a.updated_at.to_date)} Ago"
-            td
-              span
-              = link_to product_path(a) do
-                i.fas.fa-eye
-              - if current_admin
-                span.ml-3
-                  = link_to edit_product_path(a) do
-                    i.fas.fa-pen
-                span.ml-3
-                  = link_to product_path(a), method: :delete do
-                    i.fas.fa-trash
+    .product-items
+      - @products.each do |p|
+        .product
+          .product-content
+            .product-img
+              - if p.cover_image.attached?
+                = image_tag p.cover_image, alt: 'product image'
+            .product-btns
+              button.btn-cart type="button"
+                label.btn-text
+                  | add to cart
+                span
+                  i.fas.fa-plus
+              button.btn-buy type="button"
+                label.btn-text
+                  | buy now
+                span
+                  i.fas.fa-shopping-cart
+          .product-info
+            .product-info-top
+              h2.sm-title lifestyle
+            / Describe item section
+            = link_to p.title, product_path(p), class: 'product-name'
+            p.product-price
+            p.product-price
+              = p.price
+              | ฿
+          / .off-info
+          /   h2.sm-title 25% off
 
 .row
   .col-6
