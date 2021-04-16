@@ -1,7 +1,7 @@
-h1 Add new category
+h1 Edit new category
 
 div
-  = link_to categories_path do
+  = link_to admin_categories_path do
     = button_tag 'Back', class: 'btn btn-outline-primary'
 br
   = render 'form', category: @category

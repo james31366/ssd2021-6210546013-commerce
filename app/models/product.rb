@@ -12,7 +12,6 @@ class Product < ApplicationRecord
   validates :stock, :price, numericality: { greater_than_or_equal_to: 0 }
 
   before_save :clean_data
-
   def clean_data
     self.title = title.upcase.squish
     self.description = description.humanize

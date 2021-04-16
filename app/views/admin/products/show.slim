@@ -8,7 +8,7 @@ div
   - @product.images.each do |image|
     = image_tag image, width: '400px'
 div
-  = link_to products_path do
+  = link_to admin_products_path do
     = button_tag 'Back', class: 'btn btn-outline-primary'
 hr
 / hr

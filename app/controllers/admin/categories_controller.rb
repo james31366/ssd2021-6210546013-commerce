@@ -1,11 +1,9 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
   before_action :authenticate_admin!, except: %i[index show]
 
   def index
     @categories = Category.all
-    if @search.present?
-      @categories = @categories.where('title LIKE ? or body LIKE ?', "%#{@search}", "%#{@search}").page(@search).per(5)
-    end
+    @products = @products.search(@search) if @search.present?
     @categories = @categories.page(params[:page]).per(5)
   end
 

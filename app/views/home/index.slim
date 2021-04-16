@@ -1,25 +1,31 @@
-.row
-  .col-6
-    h1 This is products list
-  .col-6
-    .float-right
-    - if current_admin
-      div = current_admin.email
-      div = link_to 'Logout', destroy_admin_session_path, method: :delete
-    - else
-      div = link_to 'Login', new_admin_session_path
+/ .row
+/   .col-6
+/     h1 This is products list
+/   .col-6
+/     .float-right
+/     - if current_admin
+/       div = current_admin.email
+/       div = link_to 'Logout', destroy_admin_session_path, method: :delete
+/     - else
+/       div = link_to 'Login', new_admin_session_path
+
+.products
+  .container
+    h1.lg-title Commerce Website
+    p.text-light This is my commerce website
+
 
 .row
   .col-10
-    = form_tag products_path, method: :get do
+    = form_tag admin_products_path, method: :get do
       = text_field_tag 'search', @search, placeholder: 'Type something', class: 'form-control'
   .col-2
-    = link_to products_path(format: :csv) do
+    = link_to admin_products_path(format: :csv) do
       = button_tag 'Download CSV', class: 'btn btn-secondary float-right'
 
 .row.mt-2
   .col-12
-    = link_to categories_path do
+    = link_to admin_categories_path do
       = button_tag 'Category', class: 'btn btn-primary'
     .product-items
       - @products.each do |p|
@@ -43,7 +49,7 @@
             .product-info-top
               h2.sm-title lifestyle
             / Describe item section
-            = link_to p.title, product_path(p), class: 'product-name'
+            = link_to p.title, admin_product_path(p), class: 'product-name'
             p.product-price
             p.product-price
               = p.price
@@ -55,16 +61,3 @@
   .col-6
     = paginate @products
   .col-6
-    .float-right
-      - if current_admin
-        = link_to new_product_path do
-          = button_tag 'Add new Product', class: 'btn btn-outline-primary'
-
-div
-  hr
-
-.row
-  .col
-    = form_tag products_csv_upload_path, multipart: true do
-      div = file_field_tag :csv_file
-      div = submit_tag :upload

@@ -1,0 +1,35 @@
+= form_with model: [:admin, product] do |f|
+  label Cover Image
+  div
+    - if @product.cover_image.attached?
+      span
+        = image_tag @product.cover_image, width: '500px'
+      span.ml-2
+        = link_to 'Delete image', delete_image_attachment_admin_product_path(@product.cover_image.id), method: :delete,
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+    - else
+      = f.file_field :cover_image
+  label Title
+  div = f.text_field :title, placeholder: 'Title'
+  label Description
+  div = f.text_area :description, placeholder: 'Write content here'
+  label Stock
+  div = f.number_field :stock, placeholder: 'Insert Stock number', min: 0
+  label Price
+  div = f.number_field :price, placeholder: 'Price', min: 0
+  label Category
+  div = f.collection_check_boxes :category_ids, Category.all, :id, :name
+  label Status
+  div = f.select :status, Product.statuses.keys
+  label Images
+  - if @product.images.attached?
+    - @product.images.each do |image|
+      div
+        span
+          = image_tag image, width: '80px'
+        span.ml-2
+          = link_to 'Delete Image', delete_image_attachment_admin_product_path(image.id), method: :delete,
+                  data: { confirm: 'Are you sure to delete the preview' }, class: 'btn btn-danger'
+  div = f.file_field :images, multiple: true
+
+  div = f.submit 'Submit Product', class: 'btn btn-outline-primary'
