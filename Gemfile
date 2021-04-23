@@ -7,6 +7,8 @@ ruby '2.6.6'
 gem 'aws-sdk-s3'
 # For pagination
 gem 'kaminari'
+# For rendering markdown
+gem 'redcarpet'
 # For authentication
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

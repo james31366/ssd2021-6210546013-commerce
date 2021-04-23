@@ -33,3 +33,13 @@
   div = f.file_field :images, multiple: true
 
   div = f.submit 'Submit Product', class: 'btn btn-outline-primary'
+
+  link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"
+  script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"
+
+  javascript:
+      // Later
+      document.addEventListener("turbolinks:load", function () {
+          if (document.getElementsByClassName("editor-toolbar").length === 0)
+          let editor = new SimpleMDE({element: document.getElementById('product_description')});
+      })

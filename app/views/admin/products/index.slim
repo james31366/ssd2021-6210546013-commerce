@@ -1,13 +1,16 @@
+ruby:
+  markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+
 .row
   .col-6
     h1 This is products list
   .col-6
     .float-right
-    - if current_admin
-      div = current_admin.email
-      div = link_to 'Logout', destroy_admin_session_path, method: :delete
-    - else
-      div = link_to 'Login', new_admin_session_path
+      - if current_admin
+        div = current_admin.email
+        div = link_to 'Logout', destroy_admin_session_path, method: :delete
+      - else
+        div = link_to 'Login', new_admin_session_path
 
 .row
   .col-10
@@ -42,7 +45,7 @@
                 = image_tag p.cover_image, width: '64px'
             td = p.status
             td.font-weight-bold = p.title.first(16)
-            td = p.description
+            td = raw markdown.render(p.description)
             td = p.stock
             td = p.categories&.map(&:name)&.join(',').presence || 'NA'
             td
