@@ -1,40 +1,41 @@
 .products
-  .container#home
-    h1.lg-title Commerce Website
-    p.text-light This is my commerce website
-    span.float-right
-      = link_to 'Go to admin section', admin_products_path
-    .row
-      .col-10
-        = form_tag admin_products_path, method: :get do
-          = text_field_tag 'search', @search, placeholder: 'Type something', class: 'form-control'
-      .col-2
-        = link_to admin_products_path(format: :csv) do
-          = button_tag 'Download CSV', class: 'btn btn-secondary float-right'
+  h1.lg-title Commerce Website
+  p.text-light This is my commerce website
+  .row
+    .col-10
+      = form_tag admin_products_path, method: :get do
+        = text_field_tag 'search', @search, placeholder: 'Type something', class: 'form-control'
+    .col-2
+      = link_to admin_products_path(format: :csv) do
+        = button_tag 'Download CSV', class: 'btn btn-secondary float-right'
+  .row.mt-2
+    .col-12
+      = link_to admin_products_path do
+        = button_tag 'Admin Page', class: 'btn btn-outline-primary'
 
-    .product-items
-      - @products.each do |p|
-        .product
-          .product-content
-            .product-img
-              - if p.cover_image.attached?
-                = image_tag p.cover_image, alt: 'product image'
-            .product-btns
-              button.btn-cart type="button"
-                label.btn-text
-                  | add to cart
-                span
-                  i.fas.fa-plus
-              button.btn-buy type="button"
-                label.btn-text
-                  | buy now
-                span
-                  i.fas.fa-shopping-cart
-          .product-info
-            .product-info-top
-              h2.sm-title lifestyle
-            / Describe item section
-            = link_to p.title, admin_product_path(p), class: 'product-name'
-            p.product-price
-              = p.price
-              | ฿
+  .product-items.flex
+    - @products.each do |p|
+      .product
+        .product-content
+          .product-img
+            - if p.cover_image.attached?
+              = image_tag p.cover_image, alt: 'product image'
+          .product-btns
+            button.btn-cart type="button"
+              label.btn-text
+                | add to cart
+              span
+                i.fas.fa-plus
+            button.btn-buy type="button"
+              label.btn-text
+                | buy now
+              span
+                i.fas.fa-shopping-cart
+        .product-info
+          .product-info-top
+            h2.sm-title lifestyle
+          / Describe item section
+          = link_to p.title, admin_product_path(p), class: 'product-name'
+          p.product-price
+            = p.price
+            | ฿
